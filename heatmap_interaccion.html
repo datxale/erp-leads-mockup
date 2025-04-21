@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heatmap de Interacciones</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 30px; }
+        canvas { max-width: 100%; }
+    </style>
+</head>
+<body>
+    <h2>Heatmap de Interacciones por Hora y Día</h2>
+    <p>Simulación visual de los momentos con más actividad de leads.</p>
+    <canvas id="heatmapChart" width="800" height="400"></canvas>
+
+    <script>
+        const ctx = document.getElementById('heatmapChart').getContext('2d');
+        const data = {
+            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+            datasets: [
+                {
+                    label: '08:00',
+                    data: [10, 12, 15, 20, 18, 5, 2],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                },
+                {
+                    label: '12:00',
+                    data: [30, 25, 28, 33, 31, 20, 10],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                },
+                {
+                    label: '16:00',
+                    data: [45, 48, 44, 39, 36, 22, 15],
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                },
+                {
+                    label: '20:00',
+                    data: [20, 18, 21, 25, 27, 30, 18],
+                    backgroundColor: 'rgba(255, 206, 86, 0.5)'
+                }
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Horarios Pico de Conversión'
+                    }
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    </script>
+</body>
+</html>

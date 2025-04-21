@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba de Entrada API Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5">
+    <h2>Flujo de Entrada desde Meta a AWS</h2>
+    <p>Simulación del paso de datos:</p>
+    <ol>
+        <li>👤 Cliente envía mensaje desde WhatsApp</li>
+        <li>🌐 Webhook de Meta recibe el evento</li>
+        <li>🔁 API Gateway enruta el mensaje</li>
+        <li>⚙️ AWS Lambda clasifica el lead</li>
+        <li>🗃️ MySQL RDS guarda los datos</li>
+    </ol>
+    <div class="alert alert-info">Este flujo ocurre en menos de 500 ms.</div>
+</body>
+</html>
